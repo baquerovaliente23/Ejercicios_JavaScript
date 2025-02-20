@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Ejercicios</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e6f7ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #1d8a8a;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Contenedor principal para centralizar el contenido */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Estilos de los botones */
+        .button-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .button-list a {
+            display: block;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            background-color: #1d8a8a;
+            padding: 15px 30px;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Efectos al pasar el ratón */
+        .button-list a:hover {
+            background-color: #0f6e6e;
+            transform: translateY(-5px);
+        }
+
+        .button-list a:active {
+            transform: translateY(0);
+        }
+
+        /* Estilo para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .button-list a {
+                width: 180px;
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .button-list a {
+                width: 150px;
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Índice de Ejercicios</h1>
+    <div class="container">
+        <div class="button-list">
+            <a href="../ejercicio1/ejercicio1.html">Ejercicio 1: Contador</a>
+            <a href="../ejercicio2/ejercicio2.html">Ejercicio 2: Dados</a>
+            <a href="../ejercicio3/ejercicio3.html">Ejercicio 3: Simulador de Vuelo</a>
+            <a href="../ejercicio4/ejercicio4.html">Ejercicio 4: Ahorcado</a>
+            <a href="../ejercicio5/ejercicio5.html">Ejercicio 5: CRUD</a>
+        </div>
+    </div>
+</body>
+</html>

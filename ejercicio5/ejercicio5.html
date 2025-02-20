@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacción con API CRUD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interacción con la API CRUD</h1>
+
+    <div>
+        <a href="../ejercicio7/index.html">Volver al Índice</a>
+    </div>
+
+    <h3>Enviar datos a la API:</h3>
+    <form id="myForm">
+        <input type="text" id="dataInput" placeholder="Ingresa datos" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h3>Datos almacenados:</h3>
+    <div id="result"></div>
+
+    <script>
+        const apiURL = "https://crudcrud.com/api/078b07b938034fb28b2b0992c117e313/ejercicio5";  // Reemplaza con tu clave API
+
+        const form = document.getElementById("myForm");
+        const resultDiv = document.getElementById("result");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const data = document.getElementById("dataInput").value;
+
+            fetch(apiURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ data })
+            })
+            .then(response => response.json())
+            .then(() => {
+                fetchData();
+            })
+            .catch(error => console.error("Error al enviar los datos:", error));
+        });
+
+        function fetchData() {
+            fetch(apiURL)
+                .then(response => response.json())
+                .then(data => {
+                    resultDiv.innerHTML = "<pre>" + JSON.stringify(data, null, 2) + "</pre>";
+                })
+                .catch(error => console.error("Error al obtener los datos:", error));
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>
